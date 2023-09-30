@@ -4,13 +4,10 @@ set(SOURCES
        
     ./src/train.h
     ./src/wagon.h
-    ./src/train.cpp
-    ./src/wagon.cpp
     
-
     )
 
 include_directories(
     ./src/
     )
-add_executable(ChoCho ./main.cpp ${SOURCES})
+add_executable(task1 ./main.cpp ${SOURCES})
