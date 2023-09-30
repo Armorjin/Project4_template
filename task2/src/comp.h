@@ -4,8 +4,8 @@
 template<typename T> 
 class Comp{
     public:
-        Comp();
-        ~Comp();
+        //Comp();
+        //~Comp();
 
         T sum(T& a, T& b){
             return a+b;
@@ -20,9 +20,24 @@ class Comp{
 };
 
     template<> std::string Comp<std::string>::compare(std::string& a, std::string& b){
-        if (a > b)
+
+    
+    if (a.compare(b) != 0)
+    {
+        std::cout << "strings are not equal!\n";
+        if(a.compare(b) > 0)
+        {
             return a;
-        else
-            return b;    
+        }
+        else 
+        {
+            return b;
+        }
+    }
+    else return 0;
+        // if (a > b)
+        //     return a;
+        // else
+        //     return b;    
 };
 #endif
