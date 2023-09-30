@@ -4,24 +4,24 @@
 
 template<typename T>
 class Vector{
-    public:
     int v_maxsize;
     int v_size;
     T* v_ptr;
-   
-    vector(): v_size(0), v_ptr(0), v_maxsize(0){}
 
-    vector(int s): v_size(s), v_ptr(new T[s]), v_maxsize(s){
-        for (int i = 0; i < size; i++)
+    public:  
+    Vector(): v_size(0), v_ptr(0), v_maxsize(0){}
+
+    Vector(int s): v_size(s), v_ptr(new T[s]), v_maxsize(s){
+        for (int i = 0; i < v_size; i++)
         {
             v_ptr[i] = 0;
         }
         
     }
 
-    vector(const Vector&);
+    Vector(const Vector&);
     
-    ~vector() {delete [] v_ptr;}
+    ~Vector() {delete [] v_ptr;}
 
 
     T& operator[](int n);

@@ -1,7 +1,5 @@
-#include "my_vector.h"
-#include <iostream>
 #include <fstream>
-
+#include "my_vector.h"
 // void consoleIn(Train* trainToFill){
     
 //     int size;
