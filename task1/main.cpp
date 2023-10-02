@@ -10,6 +10,13 @@ int main()
 	for(int i = 0; i < dv.size(); ++i) {
 		std::cout << dv[i] << " " ;      //0 0 0 0 0
 	}
-
+    dv.pop_back();
+    for(int i = 0; i < dv.size(); ++i) {
+		std::cout << dv[i] << " " ;      //0 0 0 0 0
+	}
+    dv.push_back();
+    for(int i = 0; i < dv.size(); ++i) {
+		std::cout << dv[i] << " " ;      //0 0 0 0 0
+	}
     return 0;
 }

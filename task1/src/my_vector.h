@@ -23,7 +23,6 @@ class Vector{
     
     ~Vector() {delete [] v_ptr;}
 
-
     T& operator[](int n);
     Vector& operator=(const Vector & v);
     int size() const { return v_size; }
@@ -31,14 +30,9 @@ class Vector{
     void reserve(int alloc_size);
 	void resize(int resize_size);
 	void push_back(const T& d);
+	void pop_back();
 
 };
-
-// template<class T>
-// T& Vector<T>::at(int n) {
-//     return v_ptr[n];
-// }
-// template<> void Vector<T>::at(){
 
 template<class T>
 void Vector<T>::reserve(int alloc_size) {
@@ -91,5 +85,10 @@ void Vector<T>::push_back(const T& d){
 	v_ptr[v_size] = d;
 	v_size++;
 }
-// };
+
+template<class T>
+void Vector<T>::pop_back(){
+	 v_size--;
+}
+
 #endif
