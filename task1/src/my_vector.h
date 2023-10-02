@@ -4,14 +4,14 @@
 
 template<typename T>
 class Vector{
-    int v_maxsize;
-    int v_size;
+    unsigned int v_maxsize;
+    unsigned int v_size;
     T* v_ptr;
 
     public:  
     Vector(): v_size(0), v_ptr(0), v_maxsize(0){}
 
-    Vector(int s): v_size(s), v_ptr(new T[s]), v_maxsize(s){
+    Vector(unsigned int s): v_size(s), v_ptr(new T[s]), v_maxsize(s){
         for (int i = 0; i < v_size; i++)
         {
             v_ptr[i] = 0;
@@ -25,12 +25,13 @@ class Vector{
 
     T& operator[](int n);
     Vector& operator=(const Vector & v);
-    int size() const { return v_size; }
-	int maxsize() const { return v_maxsize; }
+    unsigned int size() const { return v_size; }
+	unsigned int maxsize() const { return v_maxsize; }
     void reserve(int alloc_size);
 	void resize(int resize_size);
 	void push_back(const T& d);
 	void pop_back();
+	void print();
 
 };
 
@@ -88,7 +89,18 @@ void Vector<T>::push_back(const T& d){
 
 template<class T>
 void Vector<T>::pop_back(){
+	if(v_size!=0)
 	 v_size--;
+	else
+		std::cerr << "Memory exceded!";
+}
+
+template<class T>
+void Vector<T>::print(){
+	for(int i = 0; i < size(); ++i) {
+		std::cout << v_ptr[i] << " " ;      
+	}
+	std::cout << std::endl;
 }
 
 #endif
