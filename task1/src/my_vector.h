@@ -89,8 +89,10 @@ template<class T>
 void Vector<T>::pop_back(){
 	if(v_size!=0)
 	 v_size--;
-	else
+	else{
 		std::cerr << "Memory exceded!";
+		return;
+	}
 }
 
 template<class T>
