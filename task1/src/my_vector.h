@@ -18,8 +18,6 @@ class Vector{
         }
         
     }
-
-    Vector(const Vector&);
     
     ~Vector() {delete [] v_ptr;}
 
