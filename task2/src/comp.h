@@ -34,27 +34,9 @@ class Comp{
     return sum;
 }
 
-//     template<> std::string Comp<std::string>::compare(std::string& a, std::string& b){
-
-    
-//     if (a.compare(b) != 0)
-//     {
-//         std::cout << "strings are not equal!\n";
-//         if(a.compare(b) > 0)
-//         {
-//             return a;
-//         }
-//         else 
-//         {
-//             return b;
-//         }
-//     }
-//     else return 0;
-//         // if (a > b)
-//         //     return a;
-//         // else
-//         //     return b;    
-// };
+    template<> std::string Comp<std::string>::compare(std::string& a, std::string& b){
+       return 0;
+};
 
 template <> bool Comp<std::string>::More(std::string a,std::string b)
 {
