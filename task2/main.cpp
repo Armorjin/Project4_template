@@ -20,6 +20,6 @@ int main(){
     std::cout << num3.sum(e,f) << std::endl;
     std::cout << num3.compare(e,f) << std::endl;
     std::cout << num4.sum(s1,s2) << "\n";
-    std::cout << num4.compare(s1,s2) << "\n";
+    std::cout << num4.More(s1,s2) << "\n";
     return 0;
 }
