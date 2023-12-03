@@ -29,6 +29,7 @@ class Vector{
 	void resize(int resize_size);
 	void push_back(const T& d);
 	void pop_back();
+	void at(const unsigned int index, const T& d);
 	void print();
 
 };
@@ -83,6 +84,29 @@ void Vector<T>::push_back(const T& d){
 		reserve(2*v_maxsize);
 	v_ptr[v_size] = d;
 	v_size++;
+}
+
+template<class T>
+void Vector<T>::at(const unsigned int index, const T& d){
+    if (index >= this->v_maxsize){                              
+      throw std::out_of_range("Incorrect index!");      // бросаем исключение
+    }
+
+    if (this->v_maxsize == this->v_size){  
+      this->v_size *= 2;                                 // увеличиваем его в 2 раза
+      T* new_arr = new T[this->v_size];                  // создаем новый массив
+    	for (std::size_t j = 0; j < this->v_maxsize; j++) {
+        	new_arr[j] = this->v_ptr[j];                       // копируем данные
+    }
+
+    delete[] this->v_ptr;                               // удаляем старый массив
+    this->v_ptr = new_arr;                              // меняем указатель
+    }
+    for (std::size_t j = this->v_maxsize; j > index; j--) {
+    	this->v_ptr[j] = this->v_ptr[j - 1];                  // сдвигаем элементы
+    }
+    this->v_ptr[index] = d;                            // вставляем элемент
+    this->v_maxsize++;                                       // увеличиваем размер массива
 }
 
 template<class T>

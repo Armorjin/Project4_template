@@ -10,6 +10,7 @@ int main()
 	dv.resize(5);
     dv.print();
     dv.push_back(2.112);
+    dv.at(3,2.28);
 	dv.print();
     dv.pop_back();
     dv.print();
